@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
           MovieHex.
         </Link>
       </div>
-      <nav className="flex items-center gap-5 text-lime-900">
+      <nav className="flex items-center gap-5 text-lime-900 dark:text-lime-500">
         <Link
           href="/"
           className="hover:text-lime-600 transition-all duration-200"
@@ -20,7 +21,7 @@ const Header = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5 sm:hidden inline hover:bg-lime-100 hover:text-lime-800 p-1 rounded-full cursor-pointer transition-all duration-300 box-content"
+            className="size-5 sm:hidden inline hover:bg-lime-100 dark:hover:bg-lime-300/10 hover:text-lime-800 p-1 rounded-full cursor-pointer transition-all duration-300 box-content"
           >
             <path
               strokeLinecap="round"
@@ -31,7 +32,7 @@ const Header = () => {
         </Link>
         <Link
           href="/about"
-          className="hover:text-lime-600 transition-all duration-200"
+          className="hover:text-lime-600 transition-all duration-200 pr-5 border-lime-500 border-r"
         >
           <span className="sm:inline hidden">About</span>
           <svg
@@ -40,7 +41,7 @@ const Header = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5 sm:hidden inline hover:bg-lime-100 hover:text-lime-800 p-1 rounded-full cursor-pointer transition-all duration-300 box-content"
+            className="size-5 sm:hidden inline dark:hover:bg-lime-300/10 hover:bg-lime-100 hover:text-lime-800 p-1 rounded-full cursor-pointer transition-all duration-300 box-content"
           >
             <path
               strokeLinecap="round"
@@ -49,22 +50,7 @@ const Header = () => {
             />
           </svg>
         </Link>
-        <button className="ml-8 max-sm:ml-0 hover:bg-lime-100 p-1 rounded-full cursor-pointer transition-all duration-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
-            />
-          </svg>
-        </button>
+        <DarkModeToggle />
       </nav>
     </header>
   );
