@@ -1,5 +1,5 @@
 const API_KEY = process.env.API_KEY;
-
+import Results from "@/components/Results";
 const page = async ({ searchParams }) => {
   const genre = searchParams.genre || "fetchTrending";
   const res = await fetch(
@@ -15,9 +15,7 @@ const page = async ({ searchParams }) => {
   const results = data.results;
   return (
     <section>
-      {results.map((movie) => (
-        <p key={movie.id}>{movie.title}</p>
-      ))}
+      <Results results={results} />
     </section>
   );
 };
